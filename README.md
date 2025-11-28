@@ -1,4 +1,5 @@
 # 🕵️‍♂️ Yonkou Leak Hunter EXTREME
+<img width="1018" height="1526" alt="yc40cow4tr691" src="https://github.com/user-attachments/assets/5b10b9ad-c43f-4d4d-80f5-cd1fe2401d87" />
 
 ### Scanner Avançado de Secrets, Chaves e APIs Sensíveis
 
