@@ -1,220 +1,189 @@
-# Yonkou
+# 🕵️‍♂️ Leak Hunter EXTREME  
+### Scanner Avançado de Secrets, Chaves e APIs Sensíveis
 
+O **Leak Hunter EXTREME** é uma ferramenta profissional destinada à identificação e auditoria de exposição de segredos em superfícies web e arquivos públicos. Ela ajuda a encontrar chaves de API, tokens, credenciais hardcoded, arquivos JavaScript/JSON expostos e vazamentos históricos (Wayback Machine). Ideal para pentests autorizados, bug bounty, CTI, AppSec e auditorias internas.
 
-🕵️‍♂️ Yonkou Leak Hunter EXTREME
-Scanner Avançado de Exposição de Secrets, Chaves e APIs Sensíveis
+> **Aviso legal:** use apenas em alvos nos quais você tem autorização explícita. O uso indevido é de responsabilidade do operador.
 
-O Leak Hunter EXTREME é uma ferramenta avançada de análise estática e dinâmica focada na detecção de exposição de credenciais sensíveis, incluindo:
+---
 
-Chaves de API
+## 🚀 Funcionalidades Principais
 
-Tokens de autenticação
+- 🔎 Análise completa de URLs (HTML, JS, JSON)  
+- 🕸️ Crawling inteligente (segue links internos e assets)  
+- 🕰️ Integração com Wayback Machine (snapshots históricos)  
+- 🧠 Conjunto configurável de padrões (regex) para detecção de secrets  
+- 📱 Cobertura de padrões mobile (Android / iOS / frameworks híbridos)  
+- ☁️ Cobertura de padrões cloud e DevOps (AWS/GCP/Azure/CI/CD/containers)  
+- 🔥 Multi-threading para alta performance  
+- ⏳ Barra de progresso (tqdm) para acompanhar execução  
+- 🟥 Destaque de achados sensíveis no terminal (color output)  
+- 💾 Dump opcional de arquivos baixados para análise offline  
+- 📊 Exportação de relatório JSON (resultados consolidados)  
+- 🧹 Opções para deduplicação e filtragem de falsos positivos  
+- 🔧 CLI com múltiplas flags para controle fino de execução
 
-Credenciais mobile (Android/iOS)
+---
 
-Segredos cloud (AWS, GCP, Azure)
+## 🧰 Requisitos
 
-Credenciais internas
+- Python 3.8+  
+- Pacotes Python (ex.: `requests`, `beautifulsoup4`, `tqdm`, `colorama`)  
+- Conexão com internet para Wayback Machine e downloads de assets
 
-Segredos históricos preservados pelo Wayback Machine
+Instalação rápida (exemplo):
+```bash
+pip install requests beautifulsoup4 tqdm colorama
+🖥️ Uso (exemplos de CLI)
+Observação: o README descreve as opções de uso e não inclui o código-fonte do scanner. Adapte as flags conforme a implementação do seu script.
 
-Secrets em JavaScript e JSON
-
-Ele combina 500+ regexes profissionais, multi-threading, busca histórica e análise profunda de arquivos remotos.
-Ideal para pentesters, analistas de segurança, bug hunters e times de AppSec.
-
-📌 Principais Funcionalidades
-🔍 1. Análise Completa de URLs
-
-Coleta de HTML
-
-Extração de JavaScript interno e externo
-
-Varredura de arquivos JSON referenciados
-
-Detecção de endpoints sensíveis
-
-📦 2. Suporte a Lista de URLs
-
-Permite análise massiva, ideal para corporações, escopos amplos ou coleta CTI.
-
-🕰 3. Wayback Machine Integration
-
-Coleta de snapshots históricos
-
-Download automático de JS/JSON antigos
-
-Busca de segredos expostos no passado
-➡ Ideal para encontrar leaks que já foram removidos
-
-🔑 4. 500+ Regexes Extremas
-
-Inclui:
-
-AWS / GCP / Azure / IBM secrets
-
-Tokens OAuth2, JWT, Bearer, Session
-
-Firebase Web/API keys
-
-iOS .plist sensitive entries
-
-Expo/React Native secrets
-
-Docker / Kubernetes / Terraform segredos
-
-Private keys / SSH / PEM
-
-Webhooks sensíveis
-
-Credenciais hardcoded
-
-Padrões mobile avançados
-
-⚡ 5. Multi-threading
-
-Roda com alta performance, configurável via --threads.
-
-🔴 6. Indicação em Vermelho
-
-Achados sensíveis aparecem em vermelho para destaque imediato.
-
-⏳ 7. Barra de Progresso
-
-Todas as etapas usam tqdm, incluindo:
-
-Download
-
-Análise
-
-Processamento de snapshots
-
-Verificação de arquivos
-
-📁 8. Dump de Scripts
-
-Permite salvar todos arquivos capturados para análise manual posterior.
-
-📜 9. Relatório em JSON
-
-Exporta um arquivo com:
-
-URL
-
-Tipo de exposição
-
-Regex acionada
-
-Localização
-
-Trecho encontrado
-
-🚀 Instalação
-1. Clone o repositório
-git clone https://github.com/seuuser/leakhunter-extreme.git
-cd leakhunter-extreme
-
-2. Instale as dependências
-pip install -r requirements.txt
-
-
-Bibliotecas usadas:
-
-requests
-
-tqdm
-
-colorama
-
-beautifulsoup4
-
-🖥️ Modo de Uso
-⭐ Escanear uma única URL
+🔹 Escanear uma única URL
+bash
+Copiar código
 python3 scanner_extremo.py --url https://alvo.com
-
-📄 Escanear lista de URLs
+🔹 Escanear uma lista de URLs
+bash
+Copiar código
 python3 scanner_extremo.py --list targets.txt
+Formato do targets.txt:
 
-
-Formato:
-
+arduino
+Copiar código
 https://site1.com
 https://site2.com
-https://api.app.com
-
-📦 Salvar relatório JSON
+https://api.alvo.com
+🔹 Salvar relatório JSON
+bash
+Copiar código
 python3 scanner_extremo.py --url https://alvo.com --output resultados.json
-
-⏱ Aumentar o número de threads
-python3 scanner_extremo.py --threads 30 --list targets.txt
-
-🕰 Desativar Wayback Machine
+🔹 Limitar threads (default ex.: 10)
+bash
+Copiar código
+python3 scanner_extremo.py --list targets.txt --threads 20
+🔹 Desativar Wayback Machine (opcional)
+bash
+Copiar código
 python3 scanner_extremo.py --url https://alvo.com --no-wayback
-
-🎯 Buscar somente JS
-python3 scanner_extremo.py --only-js --url https://alvo.com
-
-🧩 Buscar somente JSON
-python3 scanner_extremo.py --only-json --url https://alvo.com
-
-🔴 Exibir apenas achados sensíveis
-python3 scanner_extremo.py --only-hits --url https://alvo.com
-
-🗃 Remover resultados duplicados
-python3 scanner_extremo.py --dedup
-
-🔧 Modo Verboso
-python3 scanner_extremo.py --verbose
-
-🔥 Modo Turbo (máxima performance)
-python3 scanner_extremo.py --turbo
-
-📁 Salvar todos os JS/JSON baixados
-python3 scanner_extremo.py --dump-js dumps/ --url https://alvo.com
-
-🧠 Comando mais completo possível
+🔹 Buscar apenas arquivos JavaScript
+bash
+Copiar código
+python3 scanner_extremo.py --url https://alvo.com --only-js
+🔹 Buscar apenas JSON endpoints
+bash
+Copiar código
+python3 scanner_extremo.py --url https://alvo.com --only-json
+🔹 Exibir somente hits (silenciar ruído)
+bash
+Copiar código
+python3 scanner_extremo.py --url https://alvo.com --only-hits
+🔹 Remover resultados duplicados
+bash
+Copiar código
+python3 scanner_extremo.py --url https://alvo.com --dedup
+🔹 Modo verboso (logs detalhados)
+bash
+Copiar código
+python3 scanner_extremo.py --url https://alvo.com --verbose
+🔹 Modo turbo (máxima performance)
+bash
+Copiar código
+python3 scanner_extremo.py --list targets.txt --turbo
+🔹 Dump de arquivos JS/JSON baixados
+bash
+Copiar código
+python3 scanner_extremo.py --url https://alvo.com --dump-js ./jsdump/
+🔹 Comando completo (exemplo de uso avançado)
+bash
+Copiar código
 python3 scanner_extremo.py \
   --list targets.txt \
   --threads 30 \
-  --output resultados.json \
+  --output resultado.json \
   --dump-js jsdump/ \
   --turbo \
   --dedup \
   --verbose
+⚙️ Configurações e opções importantes
+Conjunto de padrões (regex): o motor aceita uma lista configurável de expressões regulares para detectar diferentes tipos de segredos. Recomendado revisar e ajustar para reduzir falsos positivos.
 
-📊 Estrutura do Projeto
+Profundidade do crawler: configure limites de profundidade ou domínio para evitar escaneamentos fora do escopo.
+
+Rate limit / delays: se você estiver varrendo um alvo com proteção, use delays e respeite o robots.txt quando apropriado.
+
+Proxy / interceptador: para análise em um ambiente controlado (ex.: Burp), exporte variáveis HTTP_PROXY/HTTPS_PROXY.
+
+Dumping: arquivos baixados podem ser salvos localmente com hashes para auditoria e evidência.
+
+Logs: habilite logs rotativos para conservar histórico das execuções.
+
+📁 Estrutura sugerida do repositório
+bash
+Copiar código
 📦 LeakHunter-EXTREME
-├── scanner_extremo.py   # código completo e único
-├── requirements.txt
-├── README.md
-└── dumps/               # opcional, criado automaticamente
+├── scanner_extremo.py        # script principal (implementação autorizada)
+├── README.md                 # este arquivo
+├── requirements.txt          # dependências
+├── targets.txt               # exemplo de lista de URLs
+└── dumps/                    # pasta criada automaticamente para dumps
+🔎 Como o scanner opera (visão técnica)
+Input: URL única ou lista de URLs.
 
-⚠️ Aviso Legal
+Normalização: normaliza URLs, valida esquema (http/https) e prepara fila.
 
-Esta ferramenta deve ser utilizada somente para:
+Download inicial: baixa HTML da página-alvo.
 
-Testes autorizados
+Extração: extrai <script src>, <a href>, <link>, e referências a .json, .map etc.
 
-Pentests contratados
+Fila de assets: adiciona assets (JS/JSON) à fila de download/scan.
 
-Auditorias internas
+Wayback Machine: (quando habilitado) consulta snapshots, adiciona assets históricos à fila.
 
-Pesquisas acadêmicas
+Análise: executa padrões configuráveis (regex) sobre os conteúdos baixados.
 
-Uso indevido é responsabilidade exclusiva do operador.
+Relato em tempo real: prints coloridos para hits; barra de progresso atualiza conforme a fila é consumida.
 
-🤝 Contribuindo
+Output consolidado: gera results.json com todos os achados, deduplicados e classificados.
 
-Pull requests e melhorias são bem-vindas.
+Dump opcional: salva cópias dos arquivos baixados para análise manual.
 
-🛡 Mantido por
+🔐 Boas práticas e recomendações
+Use apenas em alvos autorizados. Tenha sempre escopo e permissão documentada.
 
-Equipe especializada em:
+Revise e restrinja os padrões (regex) para seu escopo alvo para reduzir falsos positivos.
 
-Segurança ofensiva
+Isolar ambientes de análise (máquina dedicada, VPN corporativa, proxies controlados).
 
-AppSec
+Rotacionamento e notificação: quando encontrar secrets válidos, notifique o dono da conta e gire chaves imediatamente.
 
-DevSecOps
+Documente evidências (hash de arquivos, timestamps, snapshot do Wayback) para relatórios de auditoria.
 
-Threat Hunting
+Rate limit e backoff: evite sobrecarregar serviços e reduzir risco de bloqueio/ban.
+
+📊 Formato de saída (exemplo de results.json)
+O relatório JSON consolidado pode incluir (exemplo genérico):
+
+json
+Copiar código
+[
+  {
+    "target": "https://alvo.com",
+    "asset_url": "https://alvo.com/static/app.js",
+    "pattern_name": "JWT",
+    "match": "eyJ...abc",
+    "context_snippet": "...",
+    "timestamp": "2025-11-27T21:00:00Z"
+  }
+]
+🛡️ Uso responsável & Aviso legal
+Ferramentas de detecção de secrets podem ser poderosas. Utilize este projeto apenas para fins legais e éticos:
+
+Auditoria interna com autorização
+
+Testes contratados (pentest) com escopo definido
+
+Programas de bug bounty que permitam este tipo de varredura
+
+O autor não é responsável por uso indevido.
+
+🤝 Contribuições
+Contribuições bem-vindas (pull requests, issues, sugestões). Antes de submeter regexes ou módulos novos, verifique o impacto de segurança e a compatibilidade com o escopo ético do projeto.
