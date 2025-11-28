@@ -53,13 +53,13 @@ pip install requests beautifulsoup4 tqdm colorama
 ## URL única
 
 ``` bash
-python3 scanner_extremo.py --url https://alvo.com
+python3 Yonkou.py --url https://alvo.com
 ```
 
 ## Lista de URLs
 
 ``` bash
-python3 scanner_extremo.py --list targets.txt
+python3 Yonkou.py --list targets.txt
 ```
 
 targets.txt:
@@ -71,67 +71,67 @@ targets.txt:
 ## Salvar JSON
 
 ``` bash
-python3 scanner_extremo.py --url https://alvo.com --output resultados.json
+python3 Yonkou.py --url https://alvo.com --output resultados.json
 ```
 
 ## Threads
 
 ``` bash
-python3 scanner_extremo.py --threads 20
+python3 Yonkou.py --threads 20
 ```
 
 ## Sem Wayback
 
 ``` bash
-python3 scanner_extremo.py --no-wayback
+python3 Yonkou.py --no-wayback
 ```
 
 ## Only JS
 
 ``` bash
-python3 scanner_extremo.py --only-js
+python3 Yonkou.py --only-js
 ```
 
 ## Only JSON
 
 ``` bash
-python3 scanner_extremo.py --only-json
+python3 Yonkou.py --only-json
 ```
 
 ## Only hits
 
 ``` bash
-python3 scanner_extremo.py --only-hits
+python3 Yonkou.py --only-hits
 ```
 
 ## Dedup
 
 ``` bash
-python3 scanner_extremo.py --dedup
+python3 Yonkou.py --dedup
 ```
 
 ## Verbose
 
 ``` bash
-python3 scanner_extremo.py --verbose
+python3 Yonkou.py --verbose
 ```
 
 ## Turbo
 
 ``` bash
-python3 scanner_extremo.py --turbo
+python3 Yonkou.py --turbo
 ```
 
 ## Dump JS
 
 ``` bash
-python3 scanner_extremo.py --dump-js ./jsdump/
+python3 Yonkou.py --dump-js ./jsdump/
 ```
 
 ## Avançado
 
 ``` bash
-python3 scanner_extremo.py   --list targets.txt   --threads 30   --output resultado.json   --dump-js jsdump/   --turbo   --dedup   --verbose
+python3 Yonkou.py   --list targets.txt   --threads 30   --output resultado.json   --dump-js jsdump/   --turbo   --dedup   --verbose
 ```
 
 ------------------------------------------------------------------------
