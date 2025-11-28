@@ -1,7 +1,7 @@
 # Yonkou
-Secret Hunter
 
-🕵️‍♂️ Leak Hunter EXTREME
+
+🕵️‍♂️ Yonkou Leak Hunter EXTREME
 Scanner Avançado de Exposição de Secrets, Chaves e APIs Sensíveis
 
 O Leak Hunter EXTREME é uma ferramenta avançada de análise estática e dinâmica focada na detecção de exposição de credenciais sensíveis, incluindo:
