@@ -1,8 +1,8 @@
-# 🕵️‍♂️ Leak Hunter EXTREME
+# 🕵️‍♂️ Yonkou Leak Hunter EXTREME
 
 ### Scanner Avançado de Secrets, Chaves e APIs Sensíveis
 
-O **Leak Hunter EXTREME** é uma ferramenta profissional destinada à
+O **Yonkou Leak Hunter EXTREME** é uma ferramenta profissional destinada à
 identificação e auditoria de exposição de segredos em superfícies web e
 arquivos públicos.\
 Ela auxilia na detecção de **chaves de API, tokens, credenciais
@@ -214,4 +214,4 @@ python3 scanner_extremo.py   --list targets.txt   --threads 30   --output result
 
 # 🤝 Contribuições
 
-Pull Requests são bem-vindos!
+Pull Requests são bem-vindos! - Doações: 16303802702 PIX
