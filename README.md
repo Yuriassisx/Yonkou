@@ -214,4 +214,4 @@ python3 Yonkou.py   --list targets.txt   --threads 30   --output resultado.json 
 
 # 🤝 Contribuições
 
-Pull Requests são bem-vindos! - Doações: 16303802702 PIX
+Pull Requests são bem-vindos! - Doações: yuri.defciber@gmail.com  - Linkedin: https://www.linkedin.com/in/yuri-assis-074a66200/
