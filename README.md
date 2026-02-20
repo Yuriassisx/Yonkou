@@ -203,7 +203,9 @@ python3 Yonkou.py   --list targets.txt   --threads 30   --output resultado.json 
 ```
 
 ------------------------------------------------------------------------
+# Plataform Enterprise
 
+------------------------------------------------------------------------
 # 🛡️ Uso responsável
 
 -   Auditoria interna
